@@ -1,0 +1,49 @@
+<div class="container">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  
+          <h3 style="text-align:center">
+              Add Article
+          </h3>
+          <div class="form-group">
+            <!-- article id -->
+            <label for="id">price: </label>
+            <div class="controls">
+              <input type="number" id="id" placeholder="ID" class="form-control" formControlName="article_id">
+            </div>
+        </div>
+
+          <div class="form-group">
+                <!-- article name -->
+                <label for="name">Name: </label>
+                <div class="controls">
+                  <input type="text" id="name" placeholder="Name" class="form-control" formControlName="article_name">
+                </div>
+            </div>
+            <div class="form-group">
+                <!-- article price -->
+                <label for="price">price: </label>
+                <div class="controls">
+                  <input type="number" id="price" placeholder="Price" class="form-control" formControlName="article_price">
+                </div>
+            </div>
+
+          <div class="form-group">
+              <!-- article category -->
+              <label for="category">Category: </label>  
+              <div class="controls">
+                  <select id="category" formControlName="article_category" class="form-control">
+                    <option *ngFor="let item of article_category" [value]="item.value">
+                        {{item.description}}
+                    </option>
+                  </select>
+              </div>
+          </div>
+          <br/>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit" style="width: 15%">
+              add
+            </button>
+          </div>
+  
+    </form>
+  </div>
